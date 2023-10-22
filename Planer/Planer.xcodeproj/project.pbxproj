@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		855304062AE53E4F00BDD680 /* TimerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855304052AE53E4F00BDD680 /* TimerViewControllerTests.swift */; };
 		85845A802AE3E0950089F098 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85845A7F2AE3E0950089F098 /* AppDelegate.swift */; };
 		85845A842AE3E0950089F098 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85845A832AE3E0950089F098 /* TimerViewController.swift */; };
 		85845A892AE3E0960089F098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85845A882AE3E0960089F098 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		855304052AE53E4F00BDD680 /* TimerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewControllerTests.swift; sourceTree = "<group>"; };
 		85845A7C2AE3E0950089F098 /* Planer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85845A7F2AE3E0950089F098 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85845A832AE3E0950089F098 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				85845AC82AE52FFE0089F098 /* Navigation */,
+				855304052AE53E4F00BDD680 /* TimerViewControllerTests.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85845AC62AE52C460089F098 /* AppCoordinatorTests.swift in Sources */,
+				855304062AE53E4F00BDD680 /* TimerViewControllerTests.swift in Sources */,
 				85845A972AE3E0960089F098 /* AppDelegateTests.swift in Sources */,
 				85845ACA2AE530310089F098 /* TimerCoordinatorTests.swift in Sources */,
 				85845ACD2AE530DF0089F098 /* AppMocks.swift in Sources */,

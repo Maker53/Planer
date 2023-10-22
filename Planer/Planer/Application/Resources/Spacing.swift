@@ -5,7 +5,7 @@ import Foundation
 @frozen
 public enum Spacing {
     /// 10.0
-    static let xxs: CGFloat = 12.0
+    static let xxs: CGFloat = 10.0
     /// 12.0
     static let xs: CGFloat = 12.0
     /// 14.0
