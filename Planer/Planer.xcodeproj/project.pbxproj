@@ -19,6 +19,8 @@
 		85845ABF2AE51FDC0089F098 /* TimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85845ABE2AE51FDC0089F098 /* TimerCoordinator.swift */; };
 		85845AC32AE52ABD0089F098 /* Mirror+reflectProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85845AC22AE52ABC0089F098 /* Mirror+reflectProperty.swift */; };
 		85845AC62AE52C460089F098 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85845AC52AE52C460089F098 /* AppCoordinatorTests.swift */; };
+		85845ACA2AE530310089F098 /* TimerCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85845AC92AE530310089F098 /* TimerCoordinatorTests.swift */; };
+		85845ACD2AE530DF0089F098 /* AppMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85845ACC2AE530DF0089F098 /* AppMocks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		85845ABE2AE51FDC0089F098 /* TimerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCoordinator.swift; sourceTree = "<group>"; };
 		85845AC22AE52ABC0089F098 /* Mirror+reflectProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mirror+reflectProperty.swift"; sourceTree = "<group>"; };
 		85845AC52AE52C460089F098 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
+		85845AC92AE530310089F098 /* TimerCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCoordinatorTests.swift; sourceTree = "<group>"; };
+		85845ACC2AE530DF0089F098 /* AppMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				85845AC02AE525A90089F098 /* Application */,
+				85845AC72AE52FF10089F098 /* Timer */,
 			);
 			path = PlanerTests;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 		85845AC02AE525A90089F098 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				85845ACB2AE530BE0089F098 /* Mocks */,
 				85845AC42AE52C360089F098 /* Navigation */,
 				85845A962AE3E0960089F098 /* AppDelegateTests.swift */,
 			);
@@ -190,6 +196,30 @@
 				85845AC52AE52C460089F098 /* AppCoordinatorTests.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		85845AC72AE52FF10089F098 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				85845AC82AE52FFE0089F098 /* Navigation */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		85845AC82AE52FFE0089F098 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				85845AC92AE530310089F098 /* TimerCoordinatorTests.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		85845ACB2AE530BE0089F098 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				85845ACC2AE530DF0089F098 /* AppMocks.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +339,8 @@
 			files = (
 				85845AC62AE52C460089F098 /* AppCoordinatorTests.swift in Sources */,
 				85845A972AE3E0960089F098 /* AppDelegateTests.swift in Sources */,
+				85845ACA2AE530310089F098 /* TimerCoordinatorTests.swift in Sources */,
+				85845ACD2AE530DF0089F098 /* AppMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

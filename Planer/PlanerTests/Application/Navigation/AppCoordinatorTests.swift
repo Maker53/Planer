@@ -14,6 +14,7 @@ final class AppCoordinatorTests: XCTestCase {
     }
     
     override func tearDown() {
+        window = nil
         appCoordinator = nil
         super.tearDown()
     }
