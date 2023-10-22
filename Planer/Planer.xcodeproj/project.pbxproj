@@ -14,6 +14,9 @@
 		85845A972AE3E0960089F098 /* PlanerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85845A962AE3E0960089F098 /* PlanerTests.swift */; };
 		85845AB42AE516B90089F098 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85845AB32AE516B90089F098 /* Timer.swift */; };
 		85845AB62AE517290089F098 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85845AB52AE517290089F098 /* TimerViewModel.swift */; };
+		85845ABA2AE51F2D0089F098 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85845AB92AE51F2D0089F098 /* Coordinator.swift */; };
+		85845ABC2AE51F550089F098 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85845ABB2AE51F550089F098 /* AppCoordinator.swift */; };
+		85845ABF2AE51FDC0089F098 /* TimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85845ABE2AE51FDC0089F098 /* TimerCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,9 @@
 		85845A962AE3E0960089F098 /* PlanerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanerTests.swift; sourceTree = "<group>"; };
 		85845AB32AE516B90089F098 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		85845AB52AE517290089F098 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		85845AB92AE51F2D0089F098 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		85845ABB2AE51F550089F098 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		85845ABE2AE51FDC0089F098 /* TimerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +84,7 @@
 		85845A7E2AE3E0950089F098 /* Planer */ = {
 			isa = PBXGroup;
 			children = (
-				85845AB12AE515F80089F098 /* Timer */,
+				85845AB72AE51F0D0089F098 /* Modules */,
 				85845AAF2AE3E18E0089F098 /* Application */,
 			);
 			path = Planer;
@@ -95,6 +101,7 @@
 		85845AAF2AE3E18E0089F098 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				85845AB82AE51F1C0089F098 /* Navigation */,
 				85845AB02AE3E19F0089F098 /* Resources */,
 				85845A8D2AE3E0960089F098 /* Info.plist */,
 				85845A8A2AE3E0960089F098 /* LaunchScreen.storyboard */,
@@ -114,6 +121,7 @@
 		85845AB12AE515F80089F098 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				85845ABD2AE51FC20089F098 /* Navigation */,
 				85845AB22AE516960089F098 /* Model */,
 				85845A832AE3E0950089F098 /* TimerViewController.swift */,
 				85845AB52AE517290089F098 /* TimerViewModel.swift */,
@@ -127,6 +135,31 @@
 				85845AB32AE516B90089F098 /* Timer.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		85845AB72AE51F0D0089F098 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				85845AB12AE515F80089F098 /* Timer */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		85845AB82AE51F1C0089F098 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				85845AB92AE51F2D0089F098 /* Coordinator.swift */,
+				85845ABB2AE51F550089F098 /* AppCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		85845ABD2AE51FC20089F098 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				85845ABE2AE51FDC0089F098 /* TimerCoordinator.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,8 +262,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85845ABC2AE51F550089F098 /* AppCoordinator.swift in Sources */,
 				85845AB62AE517290089F098 /* TimerViewModel.swift in Sources */,
 				85845AB42AE516B90089F098 /* Timer.swift in Sources */,
+				85845ABA2AE51F2D0089F098 /* Coordinator.swift in Sources */,
+				85845ABF2AE51FDC0089F098 /* TimerCoordinator.swift in Sources */,
 				85845A842AE3E0950089F098 /* TimerViewController.swift in Sources */,
 				85845A802AE3E0950089F098 /* AppDelegate.swift in Sources */,
 			);
