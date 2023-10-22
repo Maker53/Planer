@@ -3,6 +3,10 @@
 import UIKit
 
 final class TimerViewController: UIViewController {
+    // MARK: - View
+    
+    lazy var contentView: DisplaysTimerView = TimerView(frame: .zero)
+    
     // MARK: - Private Properties
     
     private let viewModel: TimerViewModelProtocol
@@ -17,5 +21,9 @@ final class TimerViewController: UIViewController {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        view = contentView
     }
 }
