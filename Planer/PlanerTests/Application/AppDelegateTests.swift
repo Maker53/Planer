@@ -16,7 +16,7 @@ final class AppDelegateTests: XCTestCase {
         super.tearDown()
     }
     
-    // MARK: - didFinishLaunchingWithOptions
+    // MARK: - .didFinishLaunchingWithOptions
     
     func testShouldSetupWindow() {
         // when
