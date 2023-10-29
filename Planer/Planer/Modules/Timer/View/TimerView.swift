@@ -2,14 +2,26 @@
 
 import UIKit
 
-protocol DisplaysTimerView: AnyObject, UIView { }
+protocol DisplaysTimerView: AnyObject, UIView {
+    func updateTimer(_ newTime: String)
+}
+
+protocol TimerViewDelegate: AnyObject {
+    func startTimer()
+    func stopTimer()
+    func resetTimer()
+}
 
 final class TimerView: UIView, DisplaysTimerView {
+    // MARK: - Internal Properties
+    
+    weak var delegate: TimerViewDelegate?
+    
     // MARK: - Views
     
     private(set) lazy var timerLabel: UILabel = {
         let label = UILabel()
-        label.text = "Test"
+        label.text = "0"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -17,18 +29,21 @@ final class TimerView: UIView, DisplaysTimerView {
     private(set) lazy var startButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Start", for: .normal)
+        button.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
         return button
     }()
     
     private(set) lazy var stopButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Stop", for: .normal)
+        button.addTarget(self, action: #selector(stopButtonTapped), for: .touchUpInside)
         return button
     }()
     
     private(set) lazy var resetButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Reset", for: .normal)
+        button.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -40,11 +55,6 @@ final class TimerView: UIView, DisplaysTimerView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    
-    // MARK: - Private Properties
-    
-    private var timer: Timer?
-    private var time: TimeInterval = .zero
     
     // MARK: - Lyfecycle
     
@@ -60,6 +70,14 @@ final class TimerView: UIView, DisplaysTimerView {
     }
 }
 
+// MARK: - DisplaysTimerView
+
+extension TimerView {
+    func updateTimer(_ newTime: String) {
+        timerLabel.text = newTime
+    }
+}
+
 // MARK: - Private
 
 private extension TimerView {
@@ -72,7 +90,6 @@ private extension TimerView {
     }
     
     func setupConstraints() {
-        let guide = safeAreaLayoutGuide
         NSLayoutConstraint.activate([
             timerLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             timerLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -80,6 +97,24 @@ private extension TimerView {
             buttonsStackView.topAnchor.constraint(equalTo: timerLabel.bottomAnchor, constant: Spacing.l),
             buttonsStackView.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
+    }
+    
+    @objc
+    func startButtonTapped() {
+        startButton.isEnabled = false
+        delegate?.startTimer()
+    }
+    
+    @objc
+    func stopButtonTapped() {
+        startButton.isEnabled = true
+        delegate?.stopTimer()
+    }
+    
+    @objc
+    func resetButtonTapped() {
+        startButton.isEnabled = true
+        delegate?.resetTimer()
     }
     
     enum Constants {

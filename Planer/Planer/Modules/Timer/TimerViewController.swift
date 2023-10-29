@@ -5,7 +5,11 @@ import UIKit
 final class TimerViewController: UIViewController {
     // MARK: - View
     
-    lazy var contentView: DisplaysTimerView = TimerView(frame: .zero)
+    lazy var contentView: DisplaysTimerView = {
+        let view = TimerView(frame: .zero)
+        view.delegate = self
+        return view
+    }()
     
     // MARK: - Private Properties
     
@@ -25,5 +29,29 @@ final class TimerViewController: UIViewController {
     
     override func loadView() {
         view = contentView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.timerDidChange = { [weak self] timer in
+            guard let self else { return }
+            self.contentView.updateTimer(timer)
+        }
+    }
+}
+
+// MARK: - TimerViewDelegate
+
+extension TimerViewController: TimerViewDelegate {
+    func startTimer() {
+        viewModel.startTimer()
+    }
+    
+    func stopTimer() {
+        viewModel.stopTimer()
+    }
+    
+    func resetTimer() {
+        viewModel.resetTimer()
     }
 }

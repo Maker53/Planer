@@ -23,8 +23,7 @@ final class TimerCoordinator: TimerCoordinatorProtocol {
     // MARK: - Coordinator
     
     func start() {
-        let timer = Timer(time: .init())
-        let viewModel: TimerViewModelProtocol = TimerViewModel(timer: timer)
+        let viewModel: TimerViewModelProtocol = TimerViewModel()
         let viewController = TimerViewController(viewModel: viewModel)
         viewController.title = "Some Title"
         viewController.view.backgroundColor = .systemBackground
